@@ -1,0 +1,239 @@
+body{
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+	background-color: #ff6347;
+	color: white;
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+}
+
+nav{
+	background-image: url("../uploads/headbgflip.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: bottom;
+}
+.navbar{
+	height: 18vh;
+}
+
+.navbar ul{
+	margin: 0;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	padding: 0
+}
+
+.navbar ul li{
+	display: table;
+	height: 14vh;
+	font-size: 65px;
+	flex-basis: 100%;
+	text-align: center;
+}
+
+.navbar ul li a{
+	display: table-cell;
+	vertical-align: middle;
+	color: white;
+	letter-spacing: 7px;
+	text-shadow: 0 1px #808d93, -1px 0 #cdd2d5, -1px 2px #808d93, -2px 1px #cdd2d5, -2px 3px #808d93, -3px 2px #cdd2d5, -3px 4px #808d93, -4px 3px #cdd2d5, -4px 5px #808d93, -5px 4px #cdd2d5, -5px 6px #808d93, -6px 5px #cdd2d5, -6px 7px #808d93, -7px 6px #cdd2d5, -7px 8px #808d93, -8px 7px #cdd2d5, -40px -40px 0px rgba(206,89,55,0);
+}
+
+.navbar ul li img{
+	max-height: 200px;
+}
+
+section{
+	display: table;
+	margin: 0 auto;
+	height: 60vh;
+}
+
+
+main section h1{
+	color: #f9a586;
+    font-size: 100px;
+    margin: 0;
+    -webkit-text-stroke: 3px #793f2a;
+    text-shadow: 7px 8px 0px #793f2a, 0px 5px 2px rgba(206,89,55,0);
+}
+
+
+#playphrase{
+	color: white;
+	font-size: 40px;
+	margin: 0;
+	text-shadow: -6px 5px 3px rgba(0,0,0,0.78);
+}
+
+form{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 5% 0;
+}
+
+form input{
+	flex-basis: 100%;
+    display: block;
+    border: none;
+    padding: 20px;
+    font-size: 45px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0 25%;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+form .play-btn {
+	flex-basis: 100%;
+	display: block;
+	border: 3px solid #ffffff;
+	color: #ffffff;
+	font-weight: bold;
+    padding: 10px 0;
+    font-size: 40px;
+	background-color: transparent;
+	margin: 2% 28%;
+	border-radius: 28px;
+	text-decoration: none;
+	text-shadow: -2px 2px 2px #000000;
+	letter-spacing: 2px;
+}
+
+form .play-btn:active {
+	color: lightgray;
+}
+
+.gamesection{
+	display: none;
+	width: 100vw;
+}
+
+.game-selection{
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	height: 20vh;
+    padding: 15% 0;
+}
+
+.namesection{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+#name-title{
+	text-align: center;
+	vertical-align: top;
+	margin-top: 40px;
+	text-shadow: #474747 3px 5px 2px, 2px -13px 2px rgba(128,206,180,0);
+	color: #FFDC7B;
+}
+
+.simon{
+	background: url("../uploads/simon.jpg");
+}
+.snake{
+	background: url("../uploads/snake.jpg");
+}
+.simon,
+.snake{
+	flex-basis: 36%;
+	text-align: center;
+	font-size: 50px;
+	height: 20vh;
+	background-position: center;
+	background-size: cover;
+	border-radius: 100px;
+	font-weight: 200;
+	position: relative;
+}
+
+
+.simon p{
+	color: white;
+    position: absolute;
+    font-size: 35px;
+    text-transform: uppercase;
+    left: 36%;
+    top: 25%;
+}
+.snake p{
+	color: black;
+    position: absolute;
+    font-size: 40px;
+    left: 33%;
+    top: -5%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*            FOOTER                */
+
+
+footer{
+	background-image: url("../uploads/footerbg.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: bottom;
+}
+footer ul{
+	display: flex;
+	flex-wrap: nowrap;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+footer ul li{
+	display: table;
+	flex-basis: 50%;
+	height: 22vh
+}
+
+footer ul li a,
+footer ul li p{
+	display: table-cell;
+	vertical-align: middle;
+	padding-top: 100px;
+}
+
+footer ul li p{
+	font-weight: 200;
+	font-size: 25px;
+	opacity: 0.5;
+}
+
+
+footer .footerlogo img{
+	max-height: 8vh;
+}
