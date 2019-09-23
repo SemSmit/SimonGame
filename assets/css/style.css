@@ -137,7 +137,7 @@ form .play-btn:active {
 	position: relative;
 }
 
-.green,.red,.yellow,.blue{
+#green,#red,#yellow,#blue{
 	height: 392px;
     display: inline-block;
     flex-basis: 40%;
@@ -145,37 +145,41 @@ form .play-btn:active {
     padding: 0;
 }
 
-.green,.red,.yellow,.blue,.circle{
+#green,#red,#yellow,#blue,.circle{
 	box-sizing: border-box;
 	border: 20px solid black;
 }
 
-.green{
-	background-color: green;
+#green{
+	background-image: linear-gradient(70deg, #0cbf00, #99f59c);
 	border-top-left-radius: 100%;
 	transform: translateX(1px) translateY(1px);
+	cursor: pointer;
 }
 
-.red{
-	background-color: red;
+#red{
+	background-image: linear-gradient(160deg, red, #ff7878);
 	border-top-right-radius: 100%;
 	transform: translateX(-1px) translateY(1px);
+	cursor: pointer;
 }
 
-.yellow{
-	background-color: yellow;
+#yellow{
+	background-image: linear-gradient(340deg, #ffb716, #fffcaa);
 	border-bottom-left-radius: 100%;
 	transform: translateX(1px) translateY(-1px);
+	cursor: pointer;
 }
 
-.blue{
-	background-color: blue;
+#blue{
+	background-image: linear-gradient(250deg, #2700ff, #8172ff);
 	border-bottom-right-radius: 100%;
 	transform: translateX(-1px) translateY(-1px);
+	cursor: pointer;
 }
 
 .circle {
-    background: gray;
+    background-image: linear-gradient( #606060, #949494);
     height: 24rem;
     width: 24rem;
     border-radius: 50%;
@@ -225,11 +229,13 @@ button#start {
 #counter{
     background-color: black;
     color: white;
-    padding: 2% 10%;
+    padding: 1% 10%;
     font-size: 40px;
-    font-weight: 900;
-    border: solid red 4px;
+    border: solid #a90000 4px;
     margin-top: 3rem;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 6px;
+    text-shadow: red 0px 0px 5px, red 0px 0px 5px, red 0px 0px 15px;
 }
 
 

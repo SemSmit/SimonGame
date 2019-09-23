@@ -39,3 +39,49 @@
 	    setTimeout(typingEffect, speed);
 	  }
 	}
+
+	//________________________SIMON GAME_______________________________
+
+	let powerButton = document.getElementById("power");
+	let strictButton = document.getElementById("strict");
+	let power = "Off";
+	let strict = "On";
+	let start = document.getElementById("start");
+	let green = document.getElementById("green");
+	let red = document.getElementById("red");
+	let blue = document.getElementById("blue");
+	let yellow = document.getElementById("yellow");
+	let colors = ["green", "red", "blue", "yellow"];
+	let computerOrder = [];
+	let playerOrder = [];
+
+	function powerSwitch(){
+		if (powerButton.innerHTML == "Off") {
+			power = "On";
+			powerButton.innerHTML = "On";
+		}
+		else if (powerButton.innerHTML == "On") {
+			power = "Off";
+			return powerButton.innerHTML ="Off";
+		}
+	};
+
+	function strictSwitch(){
+		if (strictButton.innerHTML == "Off") {
+			strictButton.innerHTML = "On";
+		}
+		else if (strictButton.innerHTML == "On") {
+			return strictButton.innerHTML ="Off";
+		}
+	};
+
+	function startGame(){
+		if (power = "On") {
+
+		}
+	}
+
+	function computerAdd(){
+		let random = Math.floor(Math.random() * 4);
+		computerOrder.push[computerOrder[random]];
+	}

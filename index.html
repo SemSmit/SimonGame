@@ -2,9 +2,14 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,700,700i,900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<audio><source src=" https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"></audio>
+	<audio><source src=" https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"></audio>
+	<audio><source src=" https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"></audio>
+	<audio><source src=" https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"></audio>
 </head>
 <body>
 	<nav>
@@ -23,21 +28,21 @@
 					<h1 id="name-title"></h1>
 					<div class="simon-area">
 						<div class="simon">
-							<div class="green"></div>
-							<div class="red"></div>
-							<div class="yellow"></div>
-							<div class="blue"></div>
+							<div id="green"></div>
+							<div id="red"></div>
+							<div id="yellow"></div>
+							<div id="blue"></div>
 							<div class="circle">
 								<div class="circlecontent">
 									<h2>SIMON</h2>
 									<button id="start">Start</button><br>
 									<div class="bottom-circle">
 										<div><p>Power:</p>
-											<button id="power">Off</button>
+											<button id="power" onclick="powerSwitch()">Off</button>
 										</div>
 										<div id="counter">-</div>
 										<div><p>Strict:</p>
-										<button id="strict">Off</button>
+											<button id="strict" onclick="strictSwitch()">Off</button>
 										</div>
 									</div>
 								</div>
@@ -47,7 +52,7 @@
 				</div>
 			</div>
 			<div class="namesection">
-				<h1>Movieclick !</h1>
+				<h1>Simon Game !</h1>
 				<p id="playphrase">Would you like to play?</p>
 				<form>
 					<input id="nameInput" autocomplete="off" type="text" maxlength="11" placeholder="Enter your name here"><br>
