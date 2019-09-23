@@ -12,7 +12,7 @@ a{
 }
 
 nav{
-	background-image: url("../uploads/headbgflip.png");
+	background-image: url("../images/headbgflip.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: bottom;
@@ -117,14 +117,6 @@ form .play-btn:active {
 	width: 100vw;
 }
 
-.game-selection{
-	display: flex;
-	flex-wrap: nowrap;
-	justify-content: space-evenly;
-	height: 20vh;
-    padding: 15% 0;
-}
-
 .namesection{
 	display: table-cell;
 	vertical-align: middle;
@@ -133,59 +125,112 @@ form .play-btn:active {
 #name-title{
 	text-align: center;
 	vertical-align: top;
-	margin-top: 40px;
 	text-shadow: #474747 3px 5px 2px, 2px -13px 2px rgba(128,206,180,0);
 	color: #FFDC7B;
 }
 
 .simon{
-	background: url("../uploads/simon.jpg");
-}
-.snake{
-	background: url("../uploads/snake.jpg");
-}
-.simon,
-.snake{
-	flex-basis: 36%;
-	text-align: center;
-	font-size: 50px;
-	height: 20vh;
-	background-position: center;
-	background-size: cover;
-	border-radius: 100px;
-	font-weight: 200;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 3rem 0;
 	position: relative;
 }
 
-
-.simon p{
-	color: white;
-    position: absolute;
-    font-size: 35px;
-    text-transform: uppercase;
-    left: 36%;
-    top: 25%;
+.green,.red,.yellow,.blue{
+	height: 392px;
+    display: inline-block;
+    flex-basis: 40%;
+    margin: 0;
+    padding: 0;
 }
-.snake p{
-	color: black;
+
+.green,.red,.yellow,.blue,.circle{
+	box-sizing: border-box;
+	border: 20px solid black;
+}
+
+.green{
+	background-color: green;
+	border-top-left-radius: 100%;
+	transform: translateX(1px) translateY(1px);
+}
+
+.red{
+	background-color: red;
+	border-top-right-radius: 100%;
+	transform: translateX(-1px) translateY(1px);
+}
+
+.yellow{
+	background-color: yellow;
+	border-bottom-left-radius: 100%;
+	transform: translateX(1px) translateY(-1px);
+}
+
+.blue{
+	background-color: blue;
+	border-bottom-right-radius: 100%;
+	transform: translateX(-1px) translateY(-1px);
+}
+
+.circle {
+    background: gray;
+    height: 24rem;
+    width: 24rem;
+    border-radius: 50%;
     position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    display: table;
+}
+
+.circlecontent {
+    color: white;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.circlecontent h2 {
+    font-size: 60px;
+    margin: 0;
+}
+
+button#start {
+    border: #00ff0596 6px solid;
+    border-radius: 60%;
+    height: 60px;
+    width: 120px;
+    font-size: 30px;
+    font-weight: 600;
+    background: #ffffff;
+    text-transform: lowercase;
+    font-family: 'Roboto', sans-serif;
+}
+
+.bottom-circle {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 1rem 2.5rem;
+    justify-content: space-evenly;
+}
+
+
+.bottom-circle p{
+	margin: 0;
+	font-size: 25px;
+}
+
+#counter{
+    background-color: black;
+    color: white;
+    padding: 2% 10%;
     font-size: 40px;
-    left: 33%;
-    top: -5%;
+    font-weight: 900;
+    border: solid red 4px;
+    margin-top: 3rem;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -201,7 +246,7 @@ form .play-btn:active {
 
 
 footer{
-	background-image: url("../uploads/footerbg.png");
+	background-image: url("../images/footerbg.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: bottom;

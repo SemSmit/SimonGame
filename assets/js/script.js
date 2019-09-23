@@ -9,13 +9,13 @@
 	  }
 	});
 
-//     -   When pressing Enter in the input, also do the submitname function
+//     -   When pressing Enter in the name-input, it clicks the button below
 	let input = document.getElementById("nameInput");
 	let name;
 	
 	input.addEventListener("keyup", function(event) {
 	  if (event.keyCode === 13) {
-	   submitName();
+	   document.getElementById("btn").click();
 	  }
 	});
 
