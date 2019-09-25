@@ -75,13 +75,27 @@
 		}
 	};
 
-	function startGame(){
-		if (power = "On") {
-
-		}
-	}
-
 	function computerAdd(){
 		let random = Math.floor(Math.random() * 4);
-		computerOrder.push[computerOrder[random]];
-	}
+		computerOrder.push(colors[random]);
+	};
+
+	$('#start').on('click', function(){
+		if (power = "On") {
+			computerTurn();
+		}
+					console.log("start geklikt");
+	});
+
+
+	function computerTurn(){
+		computerAdd();
+		console.log(computerOrder);
+		for (var i = 0; i < computerOrder.length; i++) {
+				$('#' + computerOrder[i]).click().delay(1200);
+			};	
+	};
+
+	$('#green, #red, #blue, #yellow').on('click', function() {
+		console.log('clicked: ' + this.id);
+	});
