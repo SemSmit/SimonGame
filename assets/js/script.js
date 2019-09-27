@@ -46,11 +46,11 @@
 	let strictButton = document.getElementById("strict");
 	let power = "Off";
 	let strict = "On";
-	let start = document.getElementById("start");
-	let green = document.getElementById("green");
-	let red = document.getElementById("red");
-	let blue = document.getElementById("blue");
-	let yellow = document.getElementById("yellow");
+	// let start = document.getElementById("start");
+	// let green = document.getElementById("green");
+	// let red = document.getElementById("red");
+	// let blue = document.getElementById("blue");
+	// let yellow = document.getElementById("yellow");
 	let colors = ["green", "red", "blue", "yellow"];
 	let computerOrder = [];
 	let playerOrder = [];
@@ -84,18 +84,40 @@
 		if (power = "On") {
 			computerTurn();
 		}
-					console.log("start geklikt");
 	});
+
 
 
 	function computerTurn(){
+		console.log("now copmuter turn:");
+		playerOrder = [];
 		computerAdd();
 		console.log(computerOrder);
-		for (var i = 0; i < computerOrder.length; i++) {
-				$('#' + computerOrder[i]).click().delay(1200);
-			};	
+		// for (var i = 0; i < computerOrder.length; i++) {
+		// 		$(computerOrder[i]).push();
+		// 	};	
+		// computerOrder.forEach(element => flash());=
+		playerTurn();
 	};
 
-	$('#green, #red, #blue, #yellow').on('click', function() {
-		console.log('clicked: ' + this.id);
-	});
+	function playerTurn(){
+		console.log("now players turn:");
+
+		$('#green, #red, #blue, #yellow').on('click', function() {
+			playerOrder.push(this.id);
+			console.log("na playerclick ===== " + playerOrder.length + "namelijk: " + playerOrder);
+			if ((playerOrder.length) === (computerOrder.length)) {
+				console.log("playerorder tijdens playorder=complength ===== " + playerOrder.length);
+				computerTurn();
+			} else{
+				playerTurn();
+			}
+		});
+	};
+
+
+	// computerOrder.forEach(element => flash(element));
+	function flash(){
+		// $('#red').style.backgroundColor = "white";
+		console.log("flash");
+	};
