@@ -105,13 +105,8 @@
 		  		playerOrder = [];
 		  		computerTurn();
 		  }else{
-		  	playerWait();
+		  	playerTurn();
 		  };
 		 };
 	});
 	};
-
-	function playerWait(){
-		console.log('playerwait= ' + playerOrder);
-		playerTurn();
-	}
