@@ -46,11 +46,11 @@
 	let strictButton = document.getElementById("strict");
 	let power = "Off";
 	let strict = "On";
-	// let start = document.getElementById("start");
-	// let green = document.getElementById("green");
-	// let red = document.getElementById("red");
-	// let blue = document.getElementById("blue");
-	// let yellow = document.getElementById("yellow");
+	let start = document.getElementById("start");
+	let green = document.getElementById("green");
+	let red = document.getElementById("red");
+	let blue = document.getElementById("blue");
+	let yellow = document.getElementById("yellow");
 	let colors = ["green", "red", "blue", "yellow"];
 	let computerOrder = [];
 	let playerOrder = [];
@@ -75,49 +75,43 @@
 		}
 	};
 
-	function computerAdd(){
-		let random = Math.floor(Math.random() * 4);
-		computerOrder.push(colors[random]);
-	};
-
 	$('#start').on('click', function(){
-		if (power = "On") {
+		if (power == "On") {
 			computerTurn();
 		}
 	});
 
 
-
 	function computerTurn(){
-		console.log("now copmuter turn:");
-		playerOrder = [];
+		console.log("now computer turn:");
 		computerAdd();
 		console.log(computerOrder);
-		// for (var i = 0; i < computerOrder.length; i++) {
-		// 		$(computerOrder[i]).push();
-		// 	};	
-		// computerOrder.forEach(element => flash());=
 		playerTurn();
 	};
 
+		function computerAdd(){
+		let random = Math.floor(Math.random() * 4);
+		computerOrder.push(colors[random]);
+	};
+
 	function playerTurn(){
-		console.log("now players turn:");
+	$('#green, #red, #blue, #yellow').on('click', function() {
+		if (playerOrder.length < computerOrder.length) {
+		  playerOrder.push(this.id);
+		  console.log(playerOrder);
+		  console.log(playerOrder.length + '<play       ' + computerOrder.length + '<comp');
 
-		$('#green, #red, #blue, #yellow').on('click', function() {
-			playerOrder.push(this.id);
-			console.log("na playerclick ===== " + playerOrder.length + "namelijk: " + playerOrder);
-			if ((playerOrder.length) === (computerOrder.length)) {
-				console.log("playerorder tijdens playorder=complength ===== " + playerOrder.length);
-				computerTurn();
-			} else{
-				playerTurn();
-			}
-		});
+		  if (playerOrder.length === computerOrder.length) {
+		  		playerOrder = [];
+		  		computerTurn();
+		  }else{
+		  	playerWait();
+		  };
+		 };
+	});
 	};
 
-
-	// computerOrder.forEach(element => flash(element));
-	function flash(){
-		// $('#red').style.backgroundColor = "white";
-		console.log("flash");
-	};
+	function playerWait(){
+		console.log('playerwait= ' + playerOrder);
+		playerTurn();
+	}
