@@ -54,11 +54,12 @@
 	let colors = ["green", "red", "blue", "yellow"];
 	let computerOrder = [];
 	let playerOrder = [];
+	let playerCount = "-";
 
 	function powerSwitch(){
 		if (powerButton.innerHTML == "Off") {
 			power = "On";
-			powerButton.innerHTML = "On";
+			return powerButton.innerHTML = "On";
 		}
 		else if (powerButton.innerHTML == "On") {
 			power = "Off";
@@ -68,7 +69,7 @@
 
 	function strictSwitch(){
 		if (strictButton.innerHTML == "Off") {
-			strictButton.innerHTML = "On";
+			return strictButton.innerHTML = "On";
 		}
 		else if (strictButton.innerHTML == "On") {
 			return strictButton.innerHTML ="Off";
@@ -76,6 +77,7 @@
 	};
 
 	$('#start').on('click', function(){
+		// computerOrder = [];
 		if (power == "On") {
 			computerTurn();
 		}
@@ -83,10 +85,11 @@
 
 
 	function computerTurn(){
+		playerOrder = [];
 		console.log("now computer turn:");
 		computerAdd();
 		console.log(computerOrder);
-		playerTurn();
+		computerClick();
 	};
 
 		function computerAdd(){
@@ -95,18 +98,103 @@
 	};
 
 	function playerTurn(){
-	$('#green, #red, #blue, #yellow').on('click', function() {
-		if (playerOrder.length < computerOrder.length) {
-		  playerOrder.push(this.id);
-		  console.log(playerOrder);
-		  console.log(playerOrder.length + '<play       ' + computerOrder.length + '<comp');
+		$('#green, #red, #blue, #yellow').on('click', function() {
+			playerOrder.push(this.id);
+			console.log(playerOrder);
+			if (playerCount == "-") {
+				playerCount = "1";
+				document.getElementById("counter").innerHTML = playerCount;
+			}else{
 
-		  if (playerOrder.length === computerOrder.length) {
-		  		playerOrder = [];
-		  		computerTurn();
-		  }else{
-		  	playerTurn();
-		  };
-		 };
-	});
+				console.log("playercount is not -")
+				playerCount = Number(playerCount) + 1;
+				document.getElementById("counter").innerHTML = playerCount;
+			}
+			// computerTurn();
+			return;
+		});
 	};
+
+	function computerClick(){
+		// $.each( computerOrder, function() {
+	 // 		$("#" + this).click();
+	 // 		console.log("X");
+		// });
+		    $.each( computerOrder, function(placeInOrder) {        
+		        var that = this;
+		        var t = setTimeout(function() { 
+		            $("#" + that).click();
+		        }, 1200 * placeInOrder);        
+		    });
+	};
+
+	
+    // $(computerOrder).each(function(index) {        
+    //     var that = this;
+    //     var t = setTimeout(function() { 
+    //         $(that).removeClass("invisible"); 
+    //     }, 500 * index);        
+    // });
+	
+
+	// setInterval(turnSwitch, 1000);
+
+	// function turnSwitch(){
+	// 	if () {}
+	// }
+
+	let flashTime = 1000;
+
+
+
+	$('#green').on('click', function() {
+		$(this).css("background-image", "linear-gradient(70deg, #0cbf00, #99f59c)");
+		setTimeout(function flash(){
+			$("#green").css("background-image", "linear-gradient(70deg, #21b916, #659e67)");
+		}, flashTime);
+	});
+
+	$('#red').on('click', function() {
+		$(this).css("background-image", "linear-gradient(160deg, red, #ff7878)");
+		setTimeout(function flash(){
+			$("#red").css("background-image", "linear-gradient(160deg, #c21212, #c55a5a)");
+		}, flashTime);
+	});
+
+	$('#blue').on('click', function() {
+		$(this).css("background-image", "linear-gradient(250deg, #0043ff, #50b7f2)");
+		setTimeout(function flash(){
+			$("#blue").css("background-image", "linear-gradient(250deg, #2800ff, #7d75c3)");
+		}, flashTime);
+	});
+
+	$('#yellow').on('click', function() {
+		$(this).css("background-image", "linear-gradient(340deg, #ffb716, #fffcaa)");
+		setTimeout(function flash(){
+			$("#yellow").css("background-image", "linear-gradient(340deg, #be8912, #d5d38c)");
+		}, flashTime);
+	});
+
+
+
+
+
+
+
+
+
+
+	// function playerTurn(){
+	// $('#green, #red, #blue, #yellow').on('click', function() {
+	// 	if (playerOrder.length < computerOrder.length) {
+	// 	  playerOrder.push(this.id);
+	// 	  console.log(playerOrder);
+	// 	  console.log(playerOrder.length + '<play       ' + computerOrder.length + '<comp');
+	// 	  if (playerOrder.length === computerOrder.length) {
+	// 	  		playerOrder = [];
+	// 	  		computerTurn();
+	// 	  }
+	// 	 };
+	// });
+	// };
+
