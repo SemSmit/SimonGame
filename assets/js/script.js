@@ -83,14 +83,29 @@
 		}
 	});
 
-	// function masterTurn(){
-
-	// };
+	function masterTurn(turn){
+		if (turn == computerTurn) {
+		setTimeout( function(){
+			turn();
+		}, 2000);
+		}else{
+			setTimeout( function(){
+				turn();
+			}, 0);
+		}
+	};
 
 	function computerTurn(){
 		playerOrder = [];
 		console.log("now computer turn:");
 		computerAdd();
+		if (playerCount == "-") {
+			playerCount = "1";
+			document.getElementById("counter").innerHTML = playerCount;
+		}else{
+			playerCount = Number(playerCount) + 1;
+			document.getElementById("counter").innerHTML = playerCount;
+		}
 		console.log(computerOrder);
 		computerFlash();
 	};
@@ -99,30 +114,6 @@
 		let random = Math.floor(Math.random() * 4);
 		computerOrder.push(colors[random]);
 	};
-
-	function playerTurn(){
-		$('#green, #red, #blue, #yellow').off('click');
-		playerInteract = true;
-		if (playerInteract === true) {
-			$('#green, #red, #blue, #yellow').on('click', function() {
-				playerOrder.push(this.id);
-				console.log("playerturn" + playerOrder);
-				if (playerCount == "-") {
-					playerCount = "1";
-					document.getElementById("counter").innerHTML = playerCount;
-				}else{
-					console.log("playercount is not -")
-					playerCount = Number(playerCount) + 1;
-					document.getElementById("counter").innerHTML = playerCount;
-				}
-			})
-		}
-		if (playerOrder.length === computerTurn.order) {
-			console.log("end of playerTurn");
-		}
-	};
-
-
 
 	function computerFlash(){
 			let i = 0;   
@@ -135,7 +126,9 @@
 		        	
 		        	setTimeout( function(){
 
-		        		console.log("done flashing"); //executes when computer has flashed last
+		        		console.log("done flashing"); //executes when computer has flashed its last flash.
+		        		masterTurn(playerTurn);
+
 
 		        	}, 1200);
 
@@ -143,6 +136,25 @@
 		        }, 1200 * placeInOrder);   
 		    }) 
 	};
+
+	function playerTurn(){
+		console.log("playerturn");
+		playerInteract = true;
+			$('#green, #red, #blue, #yellow').one('click', function() {
+				if (playerInteract === true) {
+				playerOrder.push(this.id);
+				console.log(playerOrder);
+				if (playerOrder.length == computerOrder.length) {
+					console.log("end of playerTurn");
+					playerInteract = false;
+					masterTurn(computerTurn);
+					}
+			}
+		})
+	};
+
+
+	
 
 
 
