@@ -90,6 +90,19 @@
 		computerAdd();
 		console.log(computerOrder);
 		computerClick();
+		$('#green, #red, #blue, #yellow').one('click', function() {
+			playerOrder.push(this.id);
+			console.log(playerOrder);
+			if (playerCount == "-") {
+				playerCount = "1";
+				document.getElementById("counter").innerHTML = playerCount;
+			}else{
+				console.log("playercount is not -")
+				playerCount = Number(playerCount) + 1;
+				document.getElementById("counter").innerHTML = playerCount;
+			}
+		});
+		console.log(playerOrder);
 	};
 
 		function computerAdd(){
@@ -97,29 +110,23 @@
 		computerOrder.push(colors[random]);
 	};
 
-	function playerTurn(){
-		$('#green, #red, #blue, #yellow').on('click', function() {
-			playerOrder.push(this.id);
-			console.log(playerOrder);
-			if (playerCount == "-") {
-				playerCount = "1";
-				document.getElementById("counter").innerHTML = playerCount;
-			}else{
-
-				console.log("playercount is not -")
-				playerCount = Number(playerCount) + 1;
-				document.getElementById("counter").innerHTML = playerCount;
-			}
-			// computerTurn();
-			return;
-		});
-	};
+	// function playerTurn(){
+	// 	$('#green, #red, #blue, #yellow').one('click', function() {
+	// 		playerOrder.push(this.id);
+	// 		console.log(playerOrder);
+	// 		if (playerCount == "-") {
+	// 			playerCount = "1";
+	// 			document.getElementById("counter").innerHTML = playerCount;
+	// 		}else{
+	// 			console.log("playercount is not -")
+	// 			playerCount = Number(playerCount) + 1;
+	// 			document.getElementById("counter").innerHTML = playerCount;
+	// 		}
+	// 	});
+	// 	console.log(playerOrder);
+	// };
 
 	function computerClick(){
-		// $.each( computerOrder, function() {
-	 // 		$("#" + this).click();
-	 // 		console.log("X");
-		// });
 		    $.each( computerOrder, function(placeInOrder) {        
 		        var that = this;
 		        var t = setTimeout(function() { 
@@ -128,24 +135,15 @@
 		    });
 	};
 
-	
-    // $(computerOrder).each(function(index) {        
-    //     var that = this;
-    //     var t = setTimeout(function() { 
-    //         $(that).removeClass("invisible"); 
-    //     }, 500 * index);        
-    // });
-	
+	setInterval(turnSwitch, 1000);
 
-	// setInterval(turnSwitch, 1000);
-
-	// function turnSwitch(){
-	// 	if () {}
-	// }
+	function turnSwitch(){
+		if (playerOrder.length === computerOrder.length) {
+			computerTurn
+		}
+	}
 
 	let flashTime = 1000;
-
-
 
 	$('#green').on('click', function() {
 		$(this).css("background-image", "linear-gradient(70deg, #0cbf00, #99f59c)");
@@ -174,27 +172,3 @@
 			$("#yellow").css("background-image", "linear-gradient(340deg, #be8912, #d5d38c)");
 		}, flashTime);
 	});
-
-
-
-
-
-
-
-
-
-
-	// function playerTurn(){
-	// $('#green, #red, #blue, #yellow').on('click', function() {
-	// 	if (playerOrder.length < computerOrder.length) {
-	// 	  playerOrder.push(this.id);
-	// 	  console.log(playerOrder);
-	// 	  console.log(playerOrder.length + '<play       ' + computerOrder.length + '<comp');
-	// 	  if (playerOrder.length === computerOrder.length) {
-	// 	  		playerOrder = [];
-	// 	  		computerTurn();
-	// 	  }
-	// 	 };
-	// });
-	// };
-
