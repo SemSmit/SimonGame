@@ -90,6 +90,14 @@
 		computerAdd();
 		console.log(computerOrder);
 		computerClick();
+	};
+
+		function computerAdd(){
+		let random = Math.floor(Math.random() * 4);
+		computerOrder.push(colors[random]);
+	};
+
+	function playerTurn(){
 		$('#green, #red, #blue, #yellow').one('click', function() {
 			playerOrder.push(this.id);
 			console.log(playerOrder);
@@ -104,27 +112,6 @@
 		});
 		console.log(playerOrder);
 	};
-
-		function computerAdd(){
-		let random = Math.floor(Math.random() * 4);
-		computerOrder.push(colors[random]);
-	};
-
-	// function playerTurn(){
-	// 	$('#green, #red, #blue, #yellow').one('click', function() {
-	// 		playerOrder.push(this.id);
-	// 		console.log(playerOrder);
-	// 		if (playerCount == "-") {
-	// 			playerCount = "1";
-	// 			document.getElementById("counter").innerHTML = playerCount;
-	// 		}else{
-	// 			console.log("playercount is not -")
-	// 			playerCount = Number(playerCount) + 1;
-	// 			document.getElementById("counter").innerHTML = playerCount;
-	// 		}
-	// 	});
-	// 	console.log(playerOrder);
-	// };
 
 	function computerClick(){
 		    $.each( computerOrder, function(placeInOrder) {        
