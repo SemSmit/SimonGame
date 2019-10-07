@@ -55,6 +55,7 @@
 	let computerOrder = [];
 	let playerOrder = [];
 	let playerCount = "-";
+	let playerInteract = false;
 
 	function powerSwitch(){
 		if (powerButton.innerHTML == "Off") {
@@ -77,60 +78,75 @@
 	};
 
 	$('#start').on('click', function(){
-		// computerOrder = [];
 		if (power == "On") {
 			computerTurn();
 		}
 	});
 
+	// function masterTurn(){
+
+	// };
 
 	function computerTurn(){
 		playerOrder = [];
 		console.log("now computer turn:");
 		computerAdd();
 		console.log(computerOrder);
-		computerClick();
+		computerFlash();
 	};
 
-		function computerAdd(){
+	function computerAdd(){
 		let random = Math.floor(Math.random() * 4);
 		computerOrder.push(colors[random]);
 	};
 
 	function playerTurn(){
-		$('#green, #red, #blue, #yellow').one('click', function() {
-			playerOrder.push(this.id);
-			console.log(playerOrder);
-			if (playerCount == "-") {
-				playerCount = "1";
-				document.getElementById("counter").innerHTML = playerCount;
-			}else{
-				console.log("playercount is not -")
-				playerCount = Number(playerCount) + 1;
-				document.getElementById("counter").innerHTML = playerCount;
-			}
-		});
-		console.log(playerOrder);
+		$('#green, #red, #blue, #yellow').off('click');
+		playerInteract = true;
+		if (playerInteract === true) {
+			$('#green, #red, #blue, #yellow').on('click', function() {
+				playerOrder.push(this.id);
+				console.log("playerturn" + playerOrder);
+				if (playerCount == "-") {
+					playerCount = "1";
+					document.getElementById("counter").innerHTML = playerCount;
+				}else{
+					console.log("playercount is not -")
+					playerCount = Number(playerCount) + 1;
+					document.getElementById("counter").innerHTML = playerCount;
+				}
+			})
+		}
+		if (playerOrder.length === computerTurn.order) {
+			console.log("end of playerTurn");
+		}
 	};
 
-	function computerClick(){
-		    $.each( computerOrder, function(placeInOrder) {        
+
+
+	function computerFlash(){
+			let i = 0;   
+		    $.each( computerOrder, function(placeInOrder) {    
 		        var that = this;
 		        var t = setTimeout(function() { 
 		            $("#" + that).click();
-		        }, 1200 * placeInOrder);        
-		    });
+		            i = i + 1;
+		            if (i === computerOrder.length) {
+		        	
+		        	setTimeout( function(){
+
+		        		console.log("done flashing"); //executes when computer has flashed last
+
+		        	}, 1200);
+
+		        }     
+		        }, 1200 * placeInOrder);   
+		    }) 
 	};
 
-	setInterval(turnSwitch, 1000);
 
-	function turnSwitch(){
-		if (playerOrder.length === computerOrder.length) {
-			computerTurn
-		}
-	}
 
-	let flashTime = 1000;
+	let flashTime = 1000; //sets the length of flashes in miliseconds.
 
 	$('#green').on('click', function() {
 		$(this).css("background-image", "linear-gradient(70deg, #0cbf00, #99f59c)");
