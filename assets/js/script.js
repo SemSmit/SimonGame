@@ -79,7 +79,10 @@
 
 	$('#start').on('click', function(){
 		if (power == "On") {
-			computerTurn();
+			playerOrder = [];
+			computerOrder = [];
+			playerCount = "-";
+			masterTurn("startClicked");
 		}
 	});
 
@@ -88,10 +91,14 @@
 		setTimeout( function(){
 			turn();
 		}, 2000);
-		}else{
+		}else if (turn == playerTurn) {
 			setTimeout( function(){
 				turn();
 			}, 0);
+		}else if (turn == "startClicked") {
+			setTimeout( function(){
+				computerTurn();
+			}, 500);
 		}
 	};
 
@@ -129,7 +136,6 @@
 		        		console.log("done flashing"); //executes when computer has flashed its last flash.
 		        		masterTurn(playerTurn);
 
-
 		        	}, 1200);
 
 		        }     
@@ -139,22 +145,16 @@
 
 	function playerTurn(){
 		console.log("playerturn");
-		playerInteract = true;
-			$('#green, #red, #blue, #yellow').one('click', function() {
-				if (playerInteract === true) {
+			$('#green, #red, #blue, #yellow').on('click.uniform', function() {
 				playerOrder.push(this.id);
 				console.log(playerOrder);
 				if (playerOrder.length == computerOrder.length) {
 					console.log("end of playerTurn");
-					playerInteract = false;
+					$('#green, #red, #blue, #yellow').off('click.uniform');
 					masterTurn(computerTurn);
-					}
-			}
+				}
 		})
-	};
-
-
-	
+	};	
 
 
 
