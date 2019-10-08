@@ -240,7 +240,9 @@ button#start {
     text-shadow: red 0px 0px 5px, red 0px 0px 5px, red 0px 0px 15px;
 }
 
-
+h1#name-title {
+    min-height: 80px;
+}
 
 
 

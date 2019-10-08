@@ -55,7 +55,7 @@
 	let computerOrder = [];
 	let playerOrder = [];
 	let playerCount = "-";
-	let playerInteract = false;
+	let playerClicks = -1;
 
 	function powerSwitch(){
 		if (powerButton.innerHTML == "Off") {
@@ -104,6 +104,7 @@
 
 	function computerTurn(){
 		playerOrder = [];
+		playerClicks = -1;
 		console.log("now computer turn:");
 		computerAdd();
 		if (playerCount == "-") {
@@ -147,14 +148,25 @@
 		console.log("playerturn");
 			$('#green, #red, #blue, #yellow').on('click.uniform', function() {
 				playerOrder.push(this.id);
+				playerClicks = playerClicks + 1;
 				console.log(playerOrder);
-				if (playerOrder.length == computerOrder.length) {
-					console.log("end of playerTurn");
-					$('#green, #red, #blue, #yellow').off('click.uniform');
-					masterTurn(computerTurn);
+				if (checkOrder(this.id) === true){
+					if (playerOrder.length == computerOrder.length) {
+						console.log("end of playerTurn");
+						$('#green, #red, #blue, #yellow').off('click.uniform');
+						masterTurn(computerTurn);
+					}
+				}else{
+					console.log("af");
 				}
 		})
 	};	
+
+	function checkOrder(currentColor){
+		if (currentColor === computerOrder[playerClicks]){
+			return true;
+		}
+	};
 
 
 
