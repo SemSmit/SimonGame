@@ -169,14 +169,26 @@
 					if (strict == "On") {
 							
 					}else if (strict == "Off") {
+						var intervalamount = 0;
+						var intervalID = setInterval(function () {
+						   document.getElementById("counter").innerHTML = "<i class='fa fa-times-circle'></i>";
+						   setTimeout( function(){
+						   		document.getElementById("counter").innerHTML = playerCount;
+						   },450);
+						   if (++intervalamount === 3) {
+						       window.clearInterval(intervalID);
+						   }
+						}, 600);
+
+						setTimeout( function(){
 						viaStrict = true;
 						console.log("wrong2");
-						computerFlash();
-						playerOrder.length = playerOrder.length - 1;
+						playerOrder = [];
 						console.log("haha playerorder " + playerOrder);
 						playerClicks = playerClicks - 1;
 						console.log("playerorder after strictoff " + playerOrder);
-						return;
+						computerFlash();
+						return;}, 2000);
 					}	
 				}
 		})

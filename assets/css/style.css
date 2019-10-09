@@ -232,6 +232,7 @@ button#start {
     background-color: black;
     color: white;
     padding: 1% 10%;
+    min-width: 20%;
     font-size: 40px;
     border: solid #a90000 4px;
     margin-top: 3rem;
