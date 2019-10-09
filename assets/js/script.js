@@ -45,7 +45,7 @@
 	let powerButton = document.getElementById("power");
 	let strictButton = document.getElementById("strict");
 	let power = "Off";
-	let strict = "On";
+	let strict = "Off";
 	let start = document.getElementById("start");
 	let green = document.getElementById("green");
 	let red = document.getElementById("red");
@@ -56,6 +56,7 @@
 	let playerOrder = [];
 	let playerCount = "-";
 	let playerClicks = -1;
+	let viaStrict = false;
 
 	function powerSwitch(){
 		if (powerButton.innerHTML == "Off") {
@@ -128,14 +129,21 @@
 		    $.each( computerOrder, function(placeInOrder) {    
 		        var that = this;
 		        var t = setTimeout(function() { 
+		        	$('#green, #red, #blue, #yellow').off('click.uniform');
 		            $("#" + that).click();
 		            i = i + 1;
 		            if (i === computerOrder.length) {
 		        	
 		        	setTimeout( function(){
 
-		        		console.log("done flashing"); //executes when computer has flashed its last flash.
-		        		masterTurn(playerTurn);
+		        		console.log("done flashing, viastrict =" + viaStrict); //executes when computer has flashed its last flash.
+		        		if (viaStrict === false) {
+		        			masterTurn(playerTurn);
+		        		}else{
+		        			$('#green, #red, #blue, #yellow').on('click.uniform');
+		        			viaStrict = false;
+		        			playerTurn();
+		        		}
 
 		        	}, 1200);
 
@@ -145,6 +153,7 @@
 	};
 
 	function playerTurn(){
+		var currentPlayerOrder = playerOrder;
 		console.log("playerturn");
 			$('#green, #red, #blue, #yellow').on('click.uniform', function() {
 				playerOrder.push(this.id);
@@ -157,7 +166,18 @@
 						masterTurn(computerTurn);
 					}
 				}else{
-					console.log("af");
+					if (strict == "On") {
+							
+					}else if (strict == "Off") {
+						viaStrict = true;
+						console.log("wrong2");
+						computerFlash();
+						playerOrder.length = playerOrder.length - 1;
+						console.log("haha playerorder " + playerOrder);
+						playerClicks = playerClicks - 1;
+						console.log("playerorder after strictoff " + playerOrder);
+						return;
+					}	
 				}
 		})
 	};	
