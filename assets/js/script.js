@@ -87,6 +87,10 @@
 		}
 	});
 
+	$(function() {
+		$('#green, #red, #blue, #yellow').css("pointer-events", "none");
+	});
+
 	function masterTurn(turn){
 		if (turn == computerTurn) {
 		setTimeout( function(){
@@ -140,6 +144,7 @@
 		        		if (viaStrict === false) {
 		        			masterTurn(playerTurn);
 		        		}else{
+		        			$('#green, #red, #blue, #yellow').css("pointer-events", "all");
 		        			$('#green, #red, #blue, #yellow').on('click.uniform');
 		        			viaStrict = false;
 		        			playerTurn();
@@ -153,22 +158,26 @@
 	};
 
 	function playerTurn(){
+		$('#green, #red, #blue, #yellow').css("pointer-events", "all");
 		var currentPlayerOrder = playerOrder;
 		console.log("playerturn");
+		console.log("PlayerOrder =" + playerOrder + ". ComputerOrder =" + computerOrder + ". playerClicks =" + playerClicks);
 			$('#green, #red, #blue, #yellow').on('click.uniform', function() {
 				playerOrder.push(this.id);
 				playerClicks = playerClicks + 1;
 				console.log(playerOrder);
 				if (checkOrder(this.id) === true){
 					if (playerOrder.length == computerOrder.length) {
+						$('#green, #red, #blue, #yellow').css("pointer-events", "none");
 						console.log("end of playerTurn");
 						$('#green, #red, #blue, #yellow').off('click.uniform');
 						masterTurn(computerTurn);
 					}
 				}else{
 					if (strict == "On") {
-							
+
 					}else if (strict == "Off") {
+						$('#green, #red, #blue, #yellow').css("pointer-events", "none");
 						var intervalamount = 0;
 						var intervalID = setInterval(function () {
 						   document.getElementById("counter").innerHTML = "<i class='fa fa-times-circle'></i>";
@@ -185,7 +194,7 @@
 						console.log("wrong2");
 						playerOrder = [];
 						console.log("haha playerorder " + playerOrder);
-						playerClicks = playerClicks - 1;
+						playerClicks = -1;
 						console.log("playerorder after strictoff " + playerOrder);
 						computerFlash();
 						return;}, 2000);
@@ -197,6 +206,8 @@
 	function checkOrder(currentColor){
 		if (currentColor === computerOrder[playerClicks]){
 			return true;
+		}else{
+			// $('#green, #red, #blue, #yellow').css("pointer-events", "none");
 		}
 	};
 
