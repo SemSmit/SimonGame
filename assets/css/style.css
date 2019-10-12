@@ -232,7 +232,10 @@ button#start {
     background-color: black;
     color: white;
     padding: 1% 10%;
-    min-width: 20%;
+    min-width: 23%;
+    min-height: 54px;
+    overflow: hidden;
+    max-width: 8vw;
     font-size: 40px;
     border: solid #a90000 4px;
     margin-top: 3rem;

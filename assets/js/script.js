@@ -54,27 +54,33 @@
 	let colors = ["green", "red", "blue", "yellow"];
 	let computerOrder = [];
 	let playerOrder = [];
-	let playerCount = "-";
+	let playerCount = "";
 	let playerClicks = -1;
 	let viaStrict = false;
 
 	function powerSwitch(){
 		if (powerButton.innerHTML == "Off") {
+			playerCount = "-";
 			power = "On";
+			document.getElementById("counter").innerHTML = playerCount;
 			return powerButton.innerHTML = "On";
 		}
 		else if (powerButton.innerHTML == "On") {
+			playerCount = "";
 			power = "Off";
+			document.getElementById("counter").innerHTML = playerCount;
 			return powerButton.innerHTML ="Off";
 		}
 	};
 
 	function strictSwitch(){
 		if (strictButton.innerHTML == "Off") {
+			strict = "On";
 			return strictButton.innerHTML = "On";
 		}
 		else if (strictButton.innerHTML == "On") {
-			return strictButton.innerHTML ="Off";
+			strict = "Off";
+			return strictButton.innerHTML = "Off";
 		}
 	};
 
@@ -82,7 +88,7 @@
 		if (power == "On") {
 			playerOrder = [];
 			computerOrder = [];
-			playerCount = "-";
+			playerCount = "0";
 			masterTurn("startClicked");
 		}
 	});
@@ -174,10 +180,8 @@
 						masterTurn(computerTurn);
 					}
 				}else{
-					if (strict == "On") {
-
-					}else if (strict == "Off") {
-						$('#green, #red, #blue, #yellow').css("pointer-events", "none");
+					console.log("strict = " + strict);
+					$('#green, #red, #blue, #yellow').css("pointer-events", "none");
 						var intervalamount = 0;
 						var intervalID = setInterval(function () {
 						   document.getElementById("counter").innerHTML = "<i class='fa fa-times-circle'></i>";
@@ -188,7 +192,15 @@
 						       window.clearInterval(intervalID);
 						   }
 						}, 600);
-
+					if (strict == "On") {
+						setTimeout( function(){
+						playerOrder = [];
+						computerOrder = [];
+						playerClicks = -1;
+						playerCount = "0";
+						return;}, 2200);
+					}else if (strict == "Off") {
+						
 						setTimeout( function(){
 						viaStrict = true;
 						console.log("wrong2");
@@ -197,7 +209,7 @@
 						playerClicks = -1;
 						console.log("playerorder after strictoff " + playerOrder);
 						computerFlash();
-						return;}, 2000);
+						return;}, 2200);
 					}	
 				}
 		})
@@ -206,8 +218,6 @@
 	function checkOrder(currentColor){
 		if (currentColor === computerOrder[playerClicks]){
 			return true;
-		}else{
-			// $('#green, #red, #blue, #yellow').css("pointer-events", "none");
 		}
 	};
 
