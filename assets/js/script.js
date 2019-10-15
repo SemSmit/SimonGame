@@ -23,7 +23,8 @@
 	function submitName(){
 		name = input.value.charAt(0).toUpperCase() + input.value.slice(1);
 		$(".namesection").hide();
-		$(".gamesection").show();
+		$(".gamesection").css('display', 'table-cell');
+		$(".simon").hide();
 		typingEffect();
 	};
 
@@ -38,6 +39,9 @@
 	    i++;
 	    setTimeout(typingEffect, speed);
 	  }
+	  setTimeout(function(){
+	  	$(".simon").slideDown('slow');
+	  }, name.length * speed + 150)
 	}
 
 	//________________________SIMON GAME_______________________________
@@ -124,7 +128,6 @@
 	function computerTurn(){
 		playerOrder = [];
 		playerClicks = -1;
-		console.log("now computer turn:");
 		computerAdd();
 		if (playerCount == "-") {
 			playerCount = "1";
@@ -154,7 +157,7 @@
 		        	
 		        	setTimeout( function(){
 
-		        		console.log("done flashing, viastrict =" + viaStrict); //executes when computer has flashed its last flash.
+		        	//executes when computer has flashed its last flash.
 		        		if (viaStrict === false) {
 		        			masterTurn(playerTurn);
 		        		}else{
@@ -174,48 +177,63 @@
 	function playerTurn(){
 		$('#green, #red, #blue, #yellow').css("pointer-events", "all");
 		var currentPlayerOrder = playerOrder;
-		console.log("playerturn");
-		console.log("PlayerOrder =" + playerOrder + ". ComputerOrder =" + computerOrder + ". playerClicks =" + playerClicks);
 			$('#green, #red, #blue, #yellow').on('click.uniform', function() {
 				playerOrder.push(this.id);
 				playerClicks = playerClicks + 1;
 				console.log(playerOrder);
 				if (checkOrder(this.id) === true){
 					if (playerOrder.length == computerOrder.length) {
+						if (playerOrder.length === 3) { // the value here is the limit of the game; when reached player has won
+						let intervalamount = 0;
+						let intervalID = setInterval(function () {
+						   document.getElementById("counter").innerHTML = "<i class='fa fa-star'></i><i class='fa fa-star-o'></i><i class='fa fa-star'></i>";
+						   setTimeout( function(){
+						   		document.getElementById("counter").innerHTML = "<i class='fa fa-star-o'></i><i class='fa fa-star'></i><i class='fa fa-star-o'></i>";
+						   },300);
+						   if (++intervalamount === 5) {
+						       	window.clearInterval(intervalID);
+							   }	
+						}, 600);
+						setTimeout( function(){
+							playerOrder = [];
+							computerOrder = [];
+							playerClicks = -1;
+							var playerCount = "0";
+						   	document.getElementById("counter").innerHTML = playerCount;
+						}, 3800);
+						}else{
 						$('#green, #red, #blue, #yellow').css("pointer-events", "none");
-						console.log("end of playerTurn");
 						$('#green, #red, #blue, #yellow').off('click.uniform');
 						masterTurn(computerTurn);
+						}
 					}
 				}else{
-					console.log("strict = " + strict);
 					$('#green, #red, #blue, #yellow').css("pointer-events", "none");
-						var intervalamount = 0;
-						var intervalID = setInterval(function () {
-						   document.getElementById("counter").innerHTML = "<i class='fa fa-times-circle'></i>";
+						let intervalamount = 0;
+						let intervalID = setInterval(function () {
+						   document.getElementById("counter").innerHTML = "";
 						   setTimeout( function(){
 						   		document.getElementById("counter").innerHTML = playerCount;
-						   },450);
+						   },200);
 						   if (++intervalamount === 3) {
 						       window.clearInterval(intervalID);
 						   }
 						}, 600);
 					if (strict == "On") {
+						console.log("testo");
 						setTimeout( function(){
 						playerOrder = [];
 						computerOrder = [];
 						playerClicks = -1;
 						playerCount = "0";
+						document.getElementById("counter").innerHTML = playerCount;
 						return;}, 2200);
 					}else if (strict == "Off") {
 						
 						setTimeout( function(){
 						viaStrict = true;
-						console.log("wrong2");
 						playerOrder = [];
-						console.log("haha playerorder " + playerOrder);
 						playerClicks = -1;
-						console.log("playerorder after strictoff " + playerOrder);
 						computerFlash();
 						return;}, 2200);
 					}	
