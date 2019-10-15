@@ -57,17 +57,23 @@
 	let playerCount = "";
 	let playerClicks = -1;
 	let viaStrict = false;
+	const audio1 = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3');
+	const audio2 = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3');
+	const audio3 = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3');
+	const audio4 = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
 
 	function powerSwitch(){
 		if (powerButton.innerHTML == "Off") {
 			playerCount = "-";
 			power = "On";
+			$("#power").addClass("on-button");
 			document.getElementById("counter").innerHTML = playerCount;
 			return powerButton.innerHTML = "On";
 		}
 		else if (powerButton.innerHTML == "On") {
 			playerCount = "";
 			power = "Off";
+			$("#power").removeClass("on-button");
 			document.getElementById("counter").innerHTML = playerCount;
 			return powerButton.innerHTML ="Off";
 		}
@@ -76,10 +82,12 @@
 	function strictSwitch(){
 		if (strictButton.innerHTML == "Off") {
 			strict = "On";
+			$("#strict").addClass("on-button");
 			return strictButton.innerHTML = "On";
 		}
 		else if (strictButton.innerHTML == "On") {
 			strict = "Off";
+			$("#strict").removeClass("on-button");
 			return strictButton.innerHTML = "Off";
 		}
 	};
@@ -227,6 +235,7 @@
 
 	$('#green').on('click', function() {
 		$(this).css("background-image", "linear-gradient(70deg, #0cbf00, #99f59c)");
+		audio1.play();
 		setTimeout(function flash(){
 			$("#green").css("background-image", "linear-gradient(70deg, #21b916, #659e67)");
 		}, flashTime);
@@ -234,6 +243,7 @@
 
 	$('#red').on('click', function() {
 		$(this).css("background-image", "linear-gradient(160deg, red, #ff7878)");
+		audio2.play();
 		setTimeout(function flash(){
 			$("#red").css("background-image", "linear-gradient(160deg, #c21212, #c55a5a)");
 		}, flashTime);
@@ -241,6 +251,7 @@
 
 	$('#blue').on('click', function() {
 		$(this).css("background-image", "linear-gradient(250deg, #0043ff, #50b7f2)");
+		audio3.play();
 		setTimeout(function flash(){
 			$("#blue").css("background-image", "linear-gradient(250deg, #2800ff, #7d75c3)");
 		}, flashTime);
@@ -248,6 +259,7 @@
 
 	$('#yellow').on('click', function() {
 		$(this).css("background-image", "linear-gradient(340deg, #ffb716, #fffcaa)");
+		audio4.play();
 		setTimeout(function flash(){
 			$("#yellow").css("background-image", "linear-gradient(340deg, #be8912, #d5d38c)");
 		}, flashTime);

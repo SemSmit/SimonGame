@@ -1,8 +1,10 @@
 body{
 	margin: 0;
 	font-family: 'Roboto', sans-serif;
-	background-image: linear-gradient(tomato, #330d07);
+	background-image: url("../images/mobilebg.jpg");
 	color: white;
+	background-size: cover;
+	background-position: left;
 }
 
 a{
@@ -12,7 +14,7 @@ a{
 }
 
 nav{
-	background-image: url("../images/headbgflip.png");
+	background-image: url("../images/headbg4.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: bottom;
@@ -57,11 +59,11 @@ section{
 
 
 main section h1{
-	color: #f9a586;
+	color: #ffac01;
     font-size: 100px;
     margin: 0;
-    -webkit-text-stroke: 3px #793f2a;
-    text-shadow: 7px 8px 0px #793f2a, 0px 5px 2px rgba(206,89,55,0);
+    -webkit-text-stroke: 3px #000060;
+    text-shadow: 7px 8px 0px #01008a9e, 0px 5px 2px rgba(206,89,55,0);
 }
 
 
@@ -94,18 +96,18 @@ form input{
 
 form .play-btn {
 	flex-basis: 100%;
-	display: block;
-	border: 3px solid #ffffff;
-	color: #ffffff;
-	font-weight: bold;
+    display: block;
+    border: 3px solid #ffc501;
+    color: #ffffff;
+    font-weight: bold;
     padding: 10px 0;
     font-size: 40px;
-	background-color: transparent;
-	margin: 2% 28%;
-	border-radius: 28px;
-	text-decoration: none;
-	text-shadow: -2px 2px 2px #000000;
-	letter-spacing: 2px;
+    background-color: transparent;
+    margin: 2% 28%;
+    border-radius: 28px;
+    text-decoration: none;
+    text-shadow: -2px 2px 2px #000060;
+    letter-spacing: 2px;
 }
 
 form .play-btn:active {
@@ -126,7 +128,8 @@ form .play-btn:active {
 	text-align: center;
 	vertical-align: top;
 	text-shadow: #474747 3px 5px 2px, 2px -13px 2px rgba(128,206,180,0);
-	color: #FFDC7B;
+	color: #ffac01;
+	min-height: 80px;
 }
 
 .simon{
@@ -147,7 +150,6 @@ form .play-btn:active {
 
 #green,#red,#yellow,#blue,.circle{
 	box-sizing: border-box;
-	border: 20px solid black;
 }
 
 #green{
@@ -181,14 +183,22 @@ form .play-btn:active {
 }
 
 .circle {
-    background-image: linear-gradient( #606060, #949494);
+    background-image: linear-gradient( #ff794c, #60007b);
     height: 24rem;
     width: 24rem;
+    border: 3px #feb300 solid;
     border-radius: 50%;
     position: absolute;
     transform: translateY(-50%);
     top: 50%;
     display: table;
+    pointer-events: none;
+    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.2), inset 0px 0px 10px 10px rgba(168, 163, 134, 0.3);
+}
+
+#start,#power,#strict{
+	pointer-events: all;
+	cursor: pointer;
 }
 
 .circlecontent {
@@ -199,18 +209,23 @@ form .play-btn:active {
 }
 
 .circlecontent h2 {
-    font-size: 60px;
+	font-size: 50px;
     margin: 0;
+    color: #ffbc01;
+    font-family: 'Alfa Slab One', cursive;
+    font-weight: 100;
+    padding-bottom: 0.5rem;
+    -webkit-text-stroke: 1px #000060;
 }
 
 button#start {
-    border: #00ff0596 6px solid;
-    border-radius: 60%;
+    border-radius: 10%;
     height: 60px;
     width: 120px;
     font-size: 30px;
     font-weight: 600;
     background: #ffffff;
+    color: #bf485f;
     text-transform: lowercase;
     font-family: 'Roboto', sans-serif;
 }
@@ -237,16 +252,29 @@ button#start {
     overflow: hidden;
     max-width: 8vw;
     font-size: 40px;
-    border: solid #a90000 4px;
+    border: solid #ffd200 2px;
     margin-top: 3rem;
     font-family: 'Orbitron', sans-serif;
     letter-spacing: 6px;
     text-shadow: red 0px 0px 5px, red 0px 0px 5px, red 0px 0px 15px;
 }
 
-h1#name-title {
-    min-height: 80px;
+button#power,button#strict{
+	width: 50px;
+	height: 30px;
+	font-family: monospace;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: bolder;
+	font-size: 18px;
+	border: none;
+	background-color: white;
 }
+
+.on-button{
+	background-color: #97f591 !important;
+}
+
 
 
 
@@ -283,6 +311,7 @@ footer ul li a,
 footer ul li p{
 	display: table-cell;
 	vertical-align: middle;
+	text-align: left;
 	padding-top: 100px;
 }
 
@@ -295,4 +324,10 @@ footer ul li p{
 
 footer .footerlogo img{
 	max-height: 8vh;
+}
+
+@media (min-width: 768px){
+	body{
+		background-image: url("../images/2650413.jpg");
+	}
 }
