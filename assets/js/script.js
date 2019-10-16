@@ -183,7 +183,7 @@
 				console.log(playerOrder);
 				if (checkOrder(this.id) === true){
 					if (playerOrder.length == computerOrder.length) {
-						if (playerOrder.length === 3) { // the value here is the limit of the game; when reached player has won
+						if (playerOrder.length === 2) { // the value here is the limit of the game; when reached player has won
 						let intervalamount = 0;
 						let intervalID = setInterval(function () {
 						   document.getElementById("counter").innerHTML = "<i class='fa fa-star'></i><i class='fa fa-star-o'></i><i class='fa fa-star'></i>";
@@ -194,6 +194,7 @@
 						       	window.clearInterval(intervalID);
 							   }	
 						}, 600);
+						$('#green, #red, #blue, #yellow').css("pointer-events", "none");
 						setTimeout( function(){
 							playerOrder = [];
 							computerOrder = [];
@@ -201,6 +202,7 @@
 							var playerCount = "0";
 						   	document.getElementById("counter").innerHTML = playerCount;
 						}, 3800);
+						return;
 						}else{
 						$('#green, #red, #blue, #yellow').css("pointer-events", "none");
 						$('#green, #red, #blue, #yellow').off('click.uniform');
@@ -227,6 +229,7 @@
 						playerClicks = -1;
 						playerCount = "0";
 						document.getElementById("counter").innerHTML = playerCount;
+						masterTurn(startClicked);
 						return;}, 2200);
 					}else if (strict == "Off") {
 						
