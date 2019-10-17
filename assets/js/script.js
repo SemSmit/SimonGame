@@ -14,18 +14,23 @@ let input = document.getElementById("nameInput");
 let name;
 
 function submitName() {
+
     name = input.value.charAt(0).toUpperCase() + input.value.slice(1);
-    $(".namesection").hide();
-    $(".gamesection").css('display', 'table-cell');
-    $(".simon").hide();
-    typingEffect();
+    if (name.length !== 0){
+        $(".namesection").hide();
+        $(".gamesection").css('display', 'table-cell');
+        $(".simon").hide();
+        typingEffect();
+    }else{
+        $("#nameInput").attr("placeholder", "Enter a name!");
+    }
 };
 
 
 //     -   Typing effect after name input
 
 let i = 0;
-let speed = 200; /* speed in miliseconds */
+let speed = 180; /* speed in miliseconds */
 
 function typingEffect() {
     if (i < name.length) {
@@ -34,9 +39,11 @@ function typingEffect() {
         setTimeout(typingEffect, speed);
     }
     setTimeout(function() {
-        $(".simon").slideDown('slow');
+        $('#green, #red, #blue, #yellow').css("height", $('#green').width()); //so colors are always as high as wide
+        $(".simon").fadeIn(1400);
     }, name.length * speed + 150)
 }
+
 
 //________________________SIMON GAME_______________________________
 

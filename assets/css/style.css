@@ -5,6 +5,7 @@ body{
 	color: white;
 	background-size: cover;
 	background-position: left;
+	background-repeat: no-repeat;
 }
 
 .backgroundblack:after {
@@ -44,43 +45,48 @@ nav{
 .navbar ul li{
 	display: table;
 	height: 14vh;
-	font-size: 65px;
+	font-size: 30px;
 	flex-basis: 100%;
 	text-align: center;
 }
 
-.navbar ul li a{
-	display: table-cell;
-	vertical-align: middle;
-	color: white;
-	padding-right: 2rem;
-	letter-spacing: 20px;
-	text-shadow: 0 1px #808d93, -1px 0 #cdd2d5, -1px 2px #808d93, -2px 1px #cdd2d5, -2px 3px #808d93, -3px 2px #cdd2d5, -3px 4px #808d93, -4px 3px #cdd2d5, -4px 5px #808d93, -5px 4px #cdd2d5, -5px 6px #808d93, -6px 5px #cdd2d5, -6px 7px #808d93, -7px 6px #cdd2d5, -7px 8px #808d93, -8px 7px #cdd2d5, -40px -40px 0px rgba(206,89,55,0);
+.navbar ul li a {
+    display: table-cell;
+    vertical-align: middle;
+    color: white;
+    padding-right: 2rem;
+    letter-spacing: 9px;
+    text-shadow: 0 1px #808d93, -1px 0 #cdd2d5, -1px 2px #808d93, -2px 1px #cdd2d5, -2px 3px #808d93, -3px 2px #cdd2d5, -3px 4px #808d93, -4px 3px #cdd2d5, -4px 5px #808d93;
 }
 
 .navbar ul li img{
-	max-height: 200px;
+	max-height: 80px;
 }
-
+.inner{
+	min-height: 380px;
+}
 section{
 	display: table;
 	margin: 0 auto;
+	min-height: 100%;
+}
+
+main{
 	height: 60vh;
 }
 
-
-main section h1{
-	color: #ffac01;
-    font-size: 100px;
+main section h1 {
+    color: #ffac01;
+    font-size: 40px;
     margin: 0;
-    -webkit-text-stroke: 3px #000060;
-    text-shadow: 7px 8px 0px #01008a9e, 0px 5px 2px rgba(206,89,55,0);
+    -webkit-text-stroke: 2px #000060;
+    text-shadow: 2px 2px 0px #01008a9e, 3px 3px 2px rgb(9, 133, 162);
 }
 
 
 #playphrase{
 	color: white;
-	font-size: 40px;
+	font-size: 20px;
 	margin: 0;
 	text-shadow: -6px 5px 3px rgba(0,0,0,0.78);
 }
@@ -93,28 +99,29 @@ form{
 }
 
 form input{
-	flex-basis: 100%;
+	flex-basis: 60%;
     display: block;
     border: none;
-    padding: 20px;
-    font-size: 45px;
+    padding: 5px 11px;
+    font-size: 20px;
     text-align: center;
     border-radius: 10px;
-    margin: 0 25%;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
+    margin: 0 auto;
+    max-width: 80vw;
 }
 
 form .play-btn {
-	flex-basis: 100%;
+    flex-basis: 40%;
     display: block;
     border: 3px solid #ffc501;
     color: #ffffff;
     font-weight: bold;
-    padding: 10px 0;
-    font-size: 40px;
+    padding: 5px 0;
+    font-size: 15px;
     background-color: transparent;
-    margin: 2% 28%;
+    margin: 20px auto;
     border-radius: 28px;
     text-decoration: none;
     text-shadow: -2px 2px 2px #000060;
@@ -129,7 +136,6 @@ form .play-btn:active {
 	display: none;
     vertical-align: middle;
 	width: 100vw;
-	padding-bottom: 8rem;
 }
 
 .namesection{
@@ -143,9 +149,6 @@ form .play-btn:active {
 	text-shadow: #474747 3px 5px 2px, 2px -13px 2px rgba(128,206,180,0);
 	color: #febf00;
 	min-height: 80px;
-}
-.inner{
-	min-height: 1000px;
 }
 #counter i{
 	position: absolute;
@@ -175,12 +178,11 @@ form .play-btn:active {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	margin: 3rem 0;
+	margin: 0;
 	position: relative;
 }
 
 #green,#red,#yellow,#blue{
-	height: 375.04px;
     display: inline-block;
     flex-basis: 40%;
     margin: 0;
@@ -227,8 +229,8 @@ form .play-btn:active {
 
 .circle {
     background-image: linear-gradient( #ff794c, #60007b);
-    height: 24rem;
-    width: 24rem;
+    height: 9rem;
+    width: 9rem;
     border: 3px #feb300 solid;
     border-radius: 50%;
     position: absolute;
@@ -252,72 +254,70 @@ form .play-btn:active {
 }
 
 .circlecontent h2 {
-	font-size: 50px;
+	font-size: 21px;
     margin: 0;
     color: #ffbc01;
     font-family: 'Alfa Slab One', cursive;
     font-weight: 100;
-    padding-bottom: 0.5rem;
     -webkit-text-stroke: 1px #000060;
 }
 
 button#start {
     border-radius: 10%;
-    height: 60px;
-    width: 120px;
-    font-size: 30px;
+    height: 17px;
+    width: 41px;
+    font-size: 11px;
     font-weight: 600;
     background: #ffffff;
     color: #bf485f;
     text-transform: lowercase;
     font-family: 'Roboto', sans-serif;
+    border: none;
 }
 
 .bottom-circle {
     display: flex;
     flex-wrap: nowrap;
-    margin: 1rem 2.5rem;
+    margin: 0rem 1rem;
     justify-content: space-evenly;
 }
 
 
 .bottom-circle p{
 	margin: 0;
-	font-size: 25px;
+	font-size: 12px;
 }
 
 .bottom-circle div{
     min-width: calc(100% / 3);
 }
 
-#counter{
+#counter {
     background-color: black;
     color: white;
     position: relative;
-    padding: 1% 10%;
-    min-width: 23%;
-    min-height: 54px;
+    padding: 1% 5%;
+    min-height: 20px;
     overflow: hidden;
     max-width: 8vw;
-    font-size: 40px;
+    font-size: 14px;
     border: solid #ffd200 2px;
-    margin-top: 3rem;
+    margin-top: 2.5rem;
     font-family: 'Orbitron', sans-serif;
-    letter-spacing: 6px;
     text-shadow: red 0px 0px 5px, red 0px 0px 5px, red 0px 0px 15px;
 }
 
-button#power,button#strict{
-	width: 50px;
-	height: 30px;
-	font-family: monospace;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-weight: bolder;
-	font-size: 18px;
-	border: none;
-	background-color: white;
-	text-align: center;
+button#power, button#strict {
+    width: 30px;
+    height: 14px;
+    font-family: monospace;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bolder;
+    font-size: 9px;
+    border: none;
+    background-color: white;
+    text-align: center;
 }
 
 .on-button{
@@ -352,12 +352,12 @@ footer ul li p{
 	display: table-cell;
 	vertical-align: middle;
 	text-align: center;
-	padding-top: 100px;
+	padding-top: 50px;
 }
 
 footer ul li p{
 	font-weight: 200;
-	font-size: 25px;
+	font-size: 11px;
 	opacity: 0.8;
 	text-align: left;
 }
@@ -367,313 +367,378 @@ footer .footerlogo img{
 	max-height: 8vh;
 }
 
-/* 
-Since I forgot to set my viewport at the start of my project, I had 
-to set it to 0.4 to let my site run properly and let media queries work. 
-So all the queries are 'breakpoints * 2.5' (because 0.4 + 2.5 = 1) 
-*/
-
-@media (min-width: calc(414px * 2.5)) {			
+@media (min-width: 414px) {			
 	.inner{
-		min-height: 1036px;
+		min-height: 411.16px;
 	}
-	#green, #red, #yellow, #blue {
-    	height: 414.4px;
-	}
-}
 
 @media (min-height: calc(812px * 2.5)) {
-	#green, #red, #yellow, #blue{
+/*	#green, #red, #yellow, #blue{
 		height: 375.04px;
-	}
+	}*/
 	.simon{
 		margin: 4rem 0;
 	}
 	footer ul li a, footer ul li p {
 		padding-top: 9rem;
 	}
+	.circle{
+		height: 10rem;
+		width: 10rem;
+	}
 }
 
 
-@media (min-width: calc(768px * 2.5)) {    
+@media (min-width: 768px) {    
 	body{
 		background-image: url("../images/2650413.jpg");
 	}
-	#green, #red, #yellow, #blue{
-		height: 537.6px;
+	main{
+		height: 59vh;
 	}
 	.inner{
-		max-width: 70%;
-    	margin: 0 auto;
-    	min-height: 1344px;
+		max-width: 80%;
+		margin: 0 auto;
+		min-height: 571.5px;
 	}
-	.namesection h1{
-		font-size: 170px;
-	}
-	#playphrase {
-	    font-size: 80px;
-	    margin: 30px 0px;
-	}
-	form input{
-		padding: 30px 10px;
-    	font-size: 60px;
-	}
-	form .play-btn{
-		padding: 20px 0px;
-    	font-size: 60px;
-	}
-	.navbar ul li{
-		font-size: 120px;
-	    margin-top: 1vh;
-	}
-	.navbar ul li img {
-	    max-height: 9vh;
-	    margin-top: 0vh;
-	}
-	li.play {
-	    padding-top: 5rem;
+	.navbar{
+		height: 19vh;
 	}
 	footer{
 		background-position: top;
-   		background-position-y: -5vh;
+	}
+	footer ul li a, footer ul li p{
+		padding-top: 110px;
+	}
+	.namesection h1{
+		font-size: 60px;
+	}
+	#playphrase {
+		font-size: 23px;
+	}
+	.navbar ul li img {
+		max-height: 12vh;
 	}
 	footer ul li p {
-    	font-size: 45px;
+		font-size: 15px;
+		text-align: center;
+		padding-right: 3rem;
 	}
 	footer ul{
-		padding-right: 5rem;
 	}
 	.circle{
-		height: 33rem;
-		width: 33rem;
+		height: 16rem;
+    	width: 16rem;
 	}
 	.circlecontent h2 {
-    	font-size: 70px;
+		font-size: 40px;
 	}
 	#counter{
-		padding: 1% 5%;
-		margin-top: 5rem;
-		font-size: 50px;
-		min-height: 68px;
+		margin-top: 3.5rem;
+	    min-height: 30px;
+	    font-size: 20px;
 	}
 	.bottom-circle p{
-		font-size: 38px;
-		font-family: monospace;
+		font-size: 20px;
+	}
+	.bottom-circle{
+		margin: 0.5rem 2rem;
 	}
 	h1#name-title {
-		font-size: 170px;
+		font-size: 55px;
 	}
 	button#start {
-	    height: 75px;
-	    width: 145px;
-	    font-size: 40px;
+		height: 26px;
+	    width: 70px;
+	    font-size: 17px;
+	    margin-top: 0.2rem;
 	}
 	button#power, button#strict{
-		font-size: 25px;
-		height: 40px;
-		width: 80px;
+		height: 24px;
+	    width: 42px;
+	    font-size: 12px;
 	}
-		.navbar ul li a {
-	    vertical-align: top;
-	    padding-right: 10rem;
+	.navbar ul li a {
+		font-size: 40px;
+	}
+	form .play-btn{
+		padding: 6px 18px;
+		font-size: 18px;
 	}
 }
 
-@media (min-width: calc(1024px * 2.5)){ 
-	#green, #red, #yellow, #blue {
-    	height: 307.2px;
+@media (min-width: 1024px){ 
+	body{
+		background-image: url("../images/2650413.jpg");
 	}
 	main{
-		min-height: 62vh;
-	}
-	h1#name-title{
-		font-size: 120px;
-	}
-	.navbar ul li img {
-	    max-height: 12vh;
-	    margin-top: -1vh;
-	    padding-left: 8rem;
-	}
-	section{
-		height: 62vh;
+		height: 50vh;
 	}
 	.inner{
-		min-height: 807.2px;
-		max-width: 30%;
+		max-width: 40%;
+		margin: 0 auto;
+		min-height: 571.5px;
 	}
-	form .play-btn {
-	    padding: 10px 30px;
-	    font-size: 40px;
-	}
-	form input {
-	    padding: 10px 10px;
-	    font-size: 40px;
-	}
-	#playphrase {
-	    font-size: 55px;
-	    margin: 10px 0px;
-	}
-	.namesection h1 {
-    	font-size: 130px;
-	}
-	.navbar ul li {
-    	font-size: 70px;
-    	text-align: left;
-	}
-
-	footer ul li p {
-	    font-size: 35px;
-	}
-	footer ul li a, footer ul li p {
-	    padding-top: 6rem;
-	    text-align: center;
-	}
-	.navbar ul li:nth-of-type(2) a {
-	    padding-left: 30rem;
-	}
-	footer .footerlogo img {
-	    max-height: 11vh;
+	.navbar{
+		height: 24vh;
 	}
 	footer{
-		background-image: url("../images/footerbg4_larger.png");
-		background-position-y: 0;
+		background-position: top;
 	}
-	.navbar {
-	    height: 19vh;
+	footer ul li a, footer ul li p{
+		padding-top: 110px;
 	}
-	nav{
-		background-image: url("../images/headbg4_larger.png");
-		background-repeat: no-repeat;
+	li.play{
+		padding-top: 1rem;
+	}
+	.namesection h1{
+		font-size: 60px;
+	}
+	#playphrase {
+		font-size: 23px;
+	}
+	.navbar ul li img {
+		max-height: 9vh;
+	    transform: translateX(380px) translateY(20px);
+	}
+	footer .footerlogo img {
+	    max-height: 7vh;
+	    transform: translateX(340px);
+	}
+	footer ul li p {
+		font-size: 15px;
+		text-align: center;
+		padding-right: 3rem;
+	}
+	footer .fa{
+		transform: translate(10px, 10px);
+		opacity: 0.6;
 	}
 	footer ul li{
-		height: 19vh;
+		height: 26vh;
 	}
-	.navbar ul li a{
-		padding-right: 0;
-	}
-	li.play {
-	    padding-top: 3rem;
-	}
-	.gamesection{
-		padding: 0;
-	}
-	.circle{
-		height: 22rem;
-		width: 22rem;
-	}
-	button#start {
-	    height: 50px;
-	    width: 100px;
-	    font-size: 30px;
+	.circle {
+	    height: 11rem;
+	    width: 11rem;
 	}
 	.circlecontent h2 {
-	    font-size: 55px;
+		font-size: 22px;
+	    margin: 0;
 	}
-	button#power, button#strict {
-	    font-size: 21px;
-	    height: 30px;
-	    width: 60px;
+
+	button#start {
+	    height: 20px;
+	    width: 46px;
+	    font-size: 12px;
 	}
-	.bottom-circle p {
-	    font-size: 28px;
-	    font-family: monospace;
+
+	.bottom-circle {
+	    margin: 0rem 1rem;
+	}
+	.bottom-circle p{
+		margin: 0;
+		font-size: 13px;
 	}
 	#counter {
 	    padding: 1% 5%;
-	    margin-top: 4rem;
-	    font-size: 30px;
-	    min-height: 40px;
+	    min-height: 23px;
+	    max-width: 8vw;
+	    font-size: 15px;
+	    margin-top: 2.5rem;
 	}
-	.simon{
-		margin-bottom: 0;
+	button#power, button#strict {
+	    width: 34px;
+	    height: 16px;
+	    letter-spacing: 2px;
+	    font-size: 11px;
+	}
+	h1#name-title {
+		font-size: 60px;
+	}
+	.navbar ul li a {
+		font-size: 40px;
+	}
+	form .play-btn{
+		padding: 6px 18px;
+		font-size: 18px;
 	}
 }
 
 
 
 /*________________________________________ ipad pro ______________________________________________________*/
-@media (min-height: calc(1300px * 2.5)){ 
-	#green, #red, #yellow, #blue {
-    	height: 716.8px;
-	}
-	nav{
+@media (min-height: 1200px){ 
+/*	#green, #red, #yellow, #blue{
+		height: 245.75px;
+	}*/
+	.navbar{
 		height: 19vh;
 	}
-	.main{
-		min-height: 1765.6px;
+	.navbar ul li a{
+		font-size: 50px;
+		padding-right: 60px;
+	}
+	main{
+		height: 55vh;
 	}
 	.inner{
-		height: 1701.6px;
+		max-width: 60%;
+		margin: 0 auto;
+		min-height: calc(619.5px + 2rem);
 	}
-	form .play-btn {
-	    padding: 30px 110px;
-	    font-size: 70px;
+	footer ul li a, footer ul li p{
+		padding-top: 140px;
+		font-size: 22px;
 	}
-	.navbar ul li img {
-	    max-height: 11vh;
-	    margin-top: 0;
+	.simon{
+		margin: 2rem 0;
 	}
-	li.play {
-	    padding-top: 10rem;
+	li.play{
+		padding-top: 1rem;
 	}
-	form input {
-	    padding: 30px 10px;
-	    font-size: 70px;
+	h1#name-title{
+		font-size: 80px;
+	}
+	form .play-btn{
+		font-size: 23px;
+	}
+	form input{
+		font-size: 30px;
+	}
+	.namesection h1{
+		font-size: 80px;
 	}
 	#playphrase {
-	    font-size: 90px;
-	    margin: 30px 0px;
+		font-size: 33px;
 	}
-	.namesection h1 {
-    	font-size: 200px;
-	}
-	.navbar ul li {
-    	font-size: 130px;
-	}
-	footer ul li p {
-	    font-size: 55px;
-	}
-	footer ul li a, footer ul li p {
-	    padding-top: 13rem;
+	.navbar ul li img {
+		max-height: 9vh;
+	    transform: none;
 	}
 	footer .footerlogo img {
-	    max-height: 10vh;
+	    max-height: 7vh;
+	    transform: none;
 	}
 	.circle {
-	    height: 45rem;
-	    width: 45rem;
+	    height: 15rem;
+	    width: 15rem;
 	}
-	.circlecontent h2 {
-	    font-size: 100px;
-	}
-	button#start {
-	    height: 85px;
-	    width: 195px;
-	    font-size: 60px;
+	.circlecontent h2{
+		font-size: 35px;
 	}
 	.bottom-circle {
-   		margin-top: 1rem;
-   	}
-   	.bottom-circle p {
-	    font-size: 44px;
+	    margin: 0rem 1.5rem;
 	}
-   	#counter {
-	    padding: 1% 7%;
-	    margin-top: 8rem;
-	    font-size: 70px;
-	    min-height: 88px;
-	    border: solid #ffd200 5px;
-	}
-	button#power, button#strict {
-	    font-size: 30px;
-	    height: 50px;
-	    width: 110px;
-	    margin-top: 0.5rem;
+	#counter{
+		min-height: 30px;
+		font-size: 20px;
 	}
 	button#start {
-    	margin-top: 1rem;
-    }
-    .gamesection{
-    	padding-bottom: 10rem;
-    }
+	    height: 28px;
+	    width: 59px;
+	    font-size: 19px;
+	}
+}
+
+@media (min-width: 1280px){
+	body{
+		background-image: url("../images/2650413.jpg");
+	}
+	main{
+		height: 50vh;
+	}
+	.inner{
+		max-width: 35%;
+		margin: 0 auto;
+		min-height: 411.16px;
+	}
+	.navbar{
+		height: 20vh;
+	}
+	footer {
+	    background-position: bottom;
+	    background-position-y: -3rem;
+	}
+	footer ul li a, footer ul li p{
+		padding-top: 16rem;
+	}
+	li.play{
+		padding-top: 2rem;
+	}
+	.namesection h1{
+		font-size: 100px;
+	}
+	#playphrase {
+		font-size: 42px;
+	}
+	form input {
+	    font-size: 33px;
+	    padding: 10px 20px;
+	}
+	.navbar ul li img {
+	    max-height: 10vh;
+	    transform: translateX(520px) translateY(35px);
+	}
+	footer .footerlogo img {
+	    max-height: 7vh;
+	    transform: translateX(470px);
+	}
+	footer ul li p {
+		font-size: 35px;
+		text-align: center;
+		padding-right: 3rem;
+	}
+	footer .fa{
+		transform: translate(10px, 10px);
+		opacity: 0.6;
+	}
+	footer ul li{
+		height: 30vh;
+	}
+	.circle {
+	    height: 20rem;
+	    width: 20rem;
+	}
+	.circlecontent h2 {
+		font-size: 44px;
+	    margin: 0;
+	}
+
+	button#start {
+	    height: 39px;
+	    width: 88px;
+	    font-size: 24px;
+	}
+
+	.bottom-circle {
+	    margin: 0.5rem 2rem;
+	}
+	.bottom-circle p{
+		margin: 0;
+		font-size: 13px;
+	}
+	#counter {
+	    padding: 1% 5%;
+	    min-height: 38px;
+	    max-width: 8vw;
+	    font-size: 22px;
+	    margin-top: 3.5rem;
+	}
+	button#power, button#strict {
+	    width: 53px;
+	    height: 28px;
+	    letter-spacing: 2px;
+	    font-size: 18px;
+	}
+	h1#name-title {
+		font-size: 90px;
+	}
+	.navbar ul li a {
+		font-size: 60px;
+		padding-right: 12rem;
+	}
+	form .play-btn{
+		padding: 6px 18px;
+		font-size: 26px;
+	}
 }
