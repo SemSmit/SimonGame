@@ -35,17 +35,19 @@ My wireframe is located in */simon game/wireframes/simongame_wireframe.jpg*
   at the top of the gamesection. Once completed; the game is visible and ready to play
 - Power button: player is able to turn the power of the game on by clicking a power button.
   once clicked: 1. the button will change from "off" to "on" and turn green.
-  				2. the counter will "turn on" and show a "-".
-  				3. the background will become lighter to give the user more of a feeling it turned on.
-  				4. other buttons now become clickable.
+	2. the counter will "turn on" and show a "-".
+	3. the background will become lighter to give the user more of a feeling it turned on.
+	4. other buttons now become clickable.
 - Strict button: once playing the player can choose to play the strict-modus.
   once clicked: 1. the button will change from "off" to "on" and turn green.
-  				2. when the player makes a mistake during the game, it now will reset completely and the user has to start over.
+  2. when the player makes a mistake during the game, it now will reset completely and the user has to start over.
 - Start button: once clicked the game starts
 - Overall game: When the game has been turned on the computer clicks a button, it then lights up and gives a sound. Players have to click the same color.
 				Then the computer clicks the previous color(s) and the player has to repeat it again. Once done correctly and reached 20, the player has 
 				won and a winning message will show up. Player could replay anytime they want.
 
+I also added a function which prevents people from using spaces in the username and limit 
+the maximum amount of characters to prevent cross site scripting (XSS).
 
 ## Technologies Used
 
@@ -63,6 +65,9 @@ In this section, you should mention all of the languages, frameworks, libraries,
 - [JQuery](https://jquery.com)
     - The project uses **JQuery** to simplify DOM manipulation.
 
+- [Jasmine](https://jasmine.github.io/)
+  - The project uses **Jasmine** for automated testing.
+
 - [Google Fonts](https://fonts.google.com/)
 	- The project uses **Google Fonts** to use fonts not included in the browser.
 
@@ -76,29 +81,29 @@ In this section, you should mention all of the languages, frameworks, libraries,
 The most testing was done through building the game for over a month.
 Thought of a lot the possible ways to perform unusual actions, like clicking the power button on random moments.
 And then ofcourse fixed it.
-
 Tested it on a small laptop, a large desktop, multiple phones.
+Unfortunately it is not compatible with internet explorer.
+
+But it is on Safari, Chrome, Firefox.
+
+I also did some automated (Jasmine) testing. It can be found in the "testing" directory.
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
-
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-- Different values for environment variables (Heroku Config Vars)?
-- Different configuration files?
-- Separate git branch?
-
-In addition, if it is not obvious, you should also describe how to run your code locally.
+I deployed the site using GitHub. Everything is the same.
+The site can be found on: (https://semsmit.github.io/SimonGame/)
 
 
 ## Credits
 
-### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+  Thanks to the slack community of CodeInstitute for helping me out a few times
+
+  And to my mentor Ignatius Ukwuoma for giving me tips through the project
 
 ### Media
-- The photos used in this site were obtained from ...
+- The background is obtained from (https://www.freepik.com/)
+- The buttonsounds are obtained from (https://www.freecodecamp.org/)
 
 ### Acknowledgements
 
-- I received inspiration for this project from X
+- I received inspiration for this project from the Simon game from Hasbro.

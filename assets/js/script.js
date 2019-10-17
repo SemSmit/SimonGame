@@ -193,7 +193,6 @@ function computerTurn() {
         playerCount = Number(playerCount) + 1;
         document.getElementById("counter").innerHTML = playerCount;
     }
-    console.log(computerOrder);
     if (power == "On") {
         computerFlash();
     } else {
@@ -252,8 +251,7 @@ function playerTurn() {
     $('#green, #red, #blue, #yellow').on('click.uniform', function() {
         playerOrder.push(this.id);
         playerClicks = playerClicks + 1;
-        console.log(playerOrder);
-        if (checkOrder(this.id)) {
+        if (checkOrder(this.id, computerOrder[playerClicks])) {
             if (playerOrder.length == computerOrder.length) {
                 if (playerOrder.length === 20) { // the value here is the limit of the game; when reached player has won
                     let intervalamount = 0;
@@ -315,8 +313,8 @@ function playerTurn() {
 };
 
 //checks if the color added by the player is the one it should be according to computerOrder.
-function checkOrder(currentColor) {
-    if (currentColor === computerOrder[playerClicks]) {
+function checkOrder(currentColor, compColor) {
+    if (currentColor === compColor) {
         return true;
     }
     return false;
