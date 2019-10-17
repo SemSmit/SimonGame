@@ -40,7 +40,7 @@ function typingEffect() {
     }
     setTimeout(function() {
         $('#green, #red, #blue, #yellow').css("height", $('#green').width()); //so colors are always as high as wide
-        $(".simon").fadeIn(1400);
+        $(".simon").fadeIn(1700);
     }, name.length * speed + 150)
 }
 

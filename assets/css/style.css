@@ -373,9 +373,6 @@ footer .footerlogo img{
 	}
 
 @media (min-height: calc(812px * 2.5)) {
-/*	#green, #red, #yellow, #blue{
-		height: 375.04px;
-	}*/
 	.simon{
 		margin: 4rem 0;
 	}
@@ -568,9 +565,6 @@ footer .footerlogo img{
 
 /*________________________________________ ipad pro ______________________________________________________*/
 @media (min-height: 1200px){ 
-/*	#green, #red, #yellow, #blue{
-		height: 245.75px;
-	}*/
 	.navbar{
 		height: 19vh;
 	}
@@ -641,6 +635,9 @@ footer .footerlogo img{
 }
 
 @media (min-width: 1280px){
+	#green,#yellow,#blue,#red{
+		max-width: 470px;
+	}
 	body{
 		background-image: url("../images/2650413.jpg");
 	}
@@ -650,11 +647,13 @@ footer .footerlogo img{
 	.inner{
 		max-width: 35%;
 		margin: 0 auto;
-		min-height: 411.16px;
+		min-height: 50vh;
 	}
 	.navbar{
 		height: 20vh;
 	}
+
+
 	footer {
 	    background-position: bottom;
 	    background-position-y: -3rem;
@@ -676,12 +675,12 @@ footer .footerlogo img{
 	    padding: 10px 20px;
 	}
 	.navbar ul li img {
-	    max-height: 10vh;
-	    transform: translateX(520px) translateY(35px);
+	    max-height: 18vh;
+	    transform: none;
 	}
 	footer .footerlogo img {
-	    max-height: 7vh;
-	    transform: translateX(470px);
+	    max-height: 12vh;
+	    transform: none;
 	}
 	footer ul li p {
 		font-size: 35px;
