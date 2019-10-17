@@ -255,7 +255,7 @@ function playerTurn() {
         console.log(playerOrder);
         if (checkOrder(this.id)) {
             if (playerOrder.length == computerOrder.length) {
-                if (playerOrder.length === 2) { // the value here is the limit of the game; when reached player has won
+                if (playerOrder.length === 20) { // the value here is the limit of the game; when reached player has won
                     let intervalamount = 0;
                     let intervalID = setInterval(function() {
                         document.getElementById("counter").innerHTML = "<i class='fa fa-star'></i><i class='fa fa-star-o'></i><i class='fa fa-star'></i>";
