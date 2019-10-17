@@ -1,7 +1,9 @@
 # Simon Game
 
-In this project I tested my interactive front-end skills to build a SIMON game. 
-In this game the goal is to mimic the actions of the computer, until round 20.
+In this project I tested my interactive front-end skills to build a SIMON game.
+
+In this game the goal is to mimic the actions of the computer by clicking the
+same color(s) as the computer, until round 20.
 It is pretty challenging, but that's the fun of the game.
  
 ## UX
@@ -51,8 +53,6 @@ the maximum amount of characters to prevent cross site scripting (XSS).
 
 ## Technologies Used
 
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
-
 - [HTML5]
 	- The project uses **HTML5** to build the structure of the website
 
@@ -80,8 +80,7 @@ In this section, you should mention all of the languages, frameworks, libraries,
 
 The most testing was done through building the game for over a month.
 Thought of a lot the possible ways to perform unusual actions, like clicking the power button on random moments.
-And then ofcourse fixed it.
-Tested it on a small laptop, a large desktop, multiple phones.
+Tested it on multiple devices with various screen sizes/ratio's.
 Unfortunately it is not compatible with internet explorer.
 
 But it is on Safari, Chrome, Firefox.
